@@ -14,4 +14,10 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/signup', [SignupController::class, 'index']);
 Route::post('/signup', [SignupController::class, 'store']);
 Route::get('/signup', [SignupController::class, 'showRegistrationForm']);
-Route::post('/signup', [SignupController::class, 'register'])->name('signup');;
+Route::post('/signup', [SignupController::class, 'register'])->name('signup');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+// Rute untuk halaman beranda
+Route::get('/home', function () {
+    return view('home');
+})->middleware('auth')->name('home');
