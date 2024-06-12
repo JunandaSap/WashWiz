@@ -1,65 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <title>Washwiz</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-</head>
-<body>
-    <header class="floating-header">
-		<div class="header-container">
-			<img src="assets/logo.png" class="logo">
-			<h1>Washwiz</h1>
-			<nav>
-				<div class="nav-left">
-					<ul>
-						<li><a href="home.html">Home</a></li>
-						<li><a href="history.html">History</a></li>
-						<li><a href="order.html">Make Order</a></li>
-						<li><a href="MyOrder.html">My Order</a></li>
-					</ul>
-				</div>
-				<div class="nav-right">
-					<div class="account-panel">
-						<a href="#account">
-							<img src="avatar.jpg" class="avatar">
-							Account
-						</a>
-					</div>
-				</div>
-			</nav>
-		</div>
-    </header>
-    <main>
-        <div class="grid-container">
-			<div class="grid-item">
-				<img src="assets/rinse.png">
-            	<a href="#section1" id="section1">Cuci Aja</a>
-			</div>
-			<div class="grid-item">
-				<img src="assets/iron.png">
-            	<a href="#section2" id="section2">Cuci Setrika</a>
-			</div>
-			<div class="grid-item">
-				<img src="assets/tshirt.png">
-            	<a href="#section3" id="section3">Dry Cleaning</a>
-			</div>
-			<div class="grid-item">
-				<img src="assets/towels.png">
-            	<a href="#section4" id="section4">Karpet</a>
-			</div>
-			<div class="grid-item">
-				<img src="assets/bed.png">
-            	<a href="#section5" id="section5">Kasur</a>
-			</div>
-			<div class="grid-item">
-				<img src="assets/shoe.png">
-            	<a href="#section6" id="section6">Sepatu & Tas</a>
-			</div>
+    <head>
+        <meta charset="utf-8">
+        <title>Washwiz</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Why Washwiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Integrations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQs</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>Washwiz Sipaling Solusi Cucianmu</h1>
+                <p>Warning <span class="text-warning">&#9888;</span></p>
+                <p>Disini dapat meringankan beban cucian mingguan maupun harianmu</p>
+                <a href="#services" class="btn btn-primary btn-lg">Kepoin yuu!!</a>
+            </div>
+            <div class="hero-img">
+                <img src="{{ asset('image/logo.png') }}" class="img-fluid" alt="Hero Image">
+            </div>
+        </section>
+        <div id="services" class="container mt-5">
+            <div class="row custom-row">
+                <div class="col-lg-6 custom-col-wrapper">
+                    <div class="custom-col">
+                    <a href="{{ url('/outlet') }}">Cuci Aja</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 custom-col-wrapper">
+                    <div class="custom-col">
+                    Cuci Setrika
+                    </div>
+                </div>
+                <div class="col-lg-6 custom-col-wrapper">
+                    <div class="custom-col">
+                    Dry Cleaning
+                    </div>
+                </div>
+                <div class="col-lg-6 custom-col-wrapper">
+                    <div class="custom-col">
+                    Karpet
+                    </div>
+                </div>
+                <div class="col-lg-6 custom-col-wrapper">
+                    <div class="custom-col">
+                    Kasur
+                    </div>
+                </div>
+                <div class="col-lg-6 custom-col-wrapper">
+                    <div class="custom-col">
+                    Sepatu & Tas
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
-</body>
-</html>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-mrcI6iIzuI2Gpjt3E2VGC0LEiWlS6z4XD2B57OeoN7t/6LU5co1p5lFfuYd7bs3" crossorigin="anonymous"></script>
+        <script>
+            document.querySelector('.btn-primary').addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });
+            });
+        </script>
+    </body>
+
+    </html>

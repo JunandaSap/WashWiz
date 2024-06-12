@@ -21,3 +21,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/home', function () {
     return view('home');
 })->middleware('auth')->name('home');
+Route::get('/outlet', function () {
+    return view('outlet');
+});
