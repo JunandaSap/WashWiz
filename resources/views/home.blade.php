@@ -7,6 +7,7 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <link rel="stylesheet" href="{{ asset('css/home.css') }}">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     </head>
 
     <body>
@@ -39,53 +40,68 @@
                 <h1>Washwiz Sipaling Solusi Cucianmu</h1>
                 <p>Warning <span class="text-warning">&#9888;</span></p>
                 <p>Disini dapat meringankan beban cucian mingguan maupun harianmu</p>
-                <a href="#services" class="btn btn-primary btn-lg">Kepoin yuu!!</a>
+                <a href="#products" class="btn btn-primary btn-lg">Kepoin yuu!!</a>
             </div>
             <div class="hero-img">
                 <img src="{{ asset('image/logo.png') }}" class="img-fluid" alt="Hero Image">
             </div>
         </section>
-        <div id="services" class="container mt-5">
-            <div class="row custom-row">
-                <div class="col-lg-6 custom-col-wrapper">
-                    <div class="custom-col">
-                    <a href="{{ url('/outlet') }}">Cuci Aja</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 custom-col-wrapper">
-                    <div class="custom-col">
-                    Cuci Setrika
-                    </div>
-                </div>
-                <div class="col-lg-6 custom-col-wrapper">
-                    <div class="custom-col">
-                    Dry Cleaning
-                    </div>
-                </div>
-                <div class="col-lg-6 custom-col-wrapper">
-                    <div class="custom-col">
-                    Karpet
-                    </div>
-                </div>
-                <div class="col-lg-6 custom-col-wrapper">
-                    <div class="custom-col">
-                    Kasur
-                    </div>
-                </div>
-                <div class="col-lg-6 custom-col-wrapper">
-                    <div class="custom-col">
-                    Sepatu & Tas
+        <div class="container" id="products">
+        <h1 class="my-4">Our Product</h1>
+        <div class="row">
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="image1.jpg" class="card-img-top" alt="Nike Court Vision">
+                    <div class="card-body">
+                        <h5 class="card-title">Berkah Laundry</h5>
+                        <p class="card-text">Rp. 15.000$</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
                     </div>
                 </div>
             </div>
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="image2.jpg" class="card-img-top" alt="Nike Essential 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Amaman Laundy</h5>
+                        <p class="card-text">Rp. 14.500</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="image3.jpg" class="card-img-top" alt="Nike Downshifter">
+                    <div class="card-body">
+                        <h5 class="card-title">Bersihkan</h5>
+                        <p class="card-text">Rp. 18.000</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="image4.jpg" class="card-img-top" alt="Nike Air Force 1 '07">
+                    <div class="card-body">
+                        <h5 class="card-title">Lamidi Laundry</h5>
+                        <p class="card-text">Rp. 14.000</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more products in the same pattern -->
         </div>
+    </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-mrcI6iIzuI2Gpjt3E2VGC0LEiWlS6z4XD2B57OeoN7t/6LU5co1p5lFfuYd7bs3" crossorigin="anonymous"></script>
         <script>
             document.querySelector('.btn-primary').addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });
+                document.querySelector('#products').scrollIntoView({ behavior: 'smooth' });
             });
         </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
 
     </html>
