@@ -56,7 +56,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $laundry->name }}</h5>
                             <p class="card-text">Rp. {{ number_format($laundry->price, 0, ',', '.') }}</p>
-                            <a href="#" class="btn btn-primary">Pesan Sekarang</a>
+                            <a href="/pesanan" class="btn btn-primary">Pesan Sekarang</a>
                         </div>
                     </div>
                 </div>

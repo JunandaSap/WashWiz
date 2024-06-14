@@ -17,7 +17,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/signup', [SignupController::class, 'showRegistrationForm'])->name('signup');
 Route::post('/signup', [SignupController::class, 'register']);
 
-Route::get('/outlet', function () {
-    return view('outlet');
+Route::get('/pesanan', function () {
+    return view('pesanan');
 })->middleware('auth');
 
