@@ -8,10 +8,13 @@ use App\Http\Controllers\OrderController;
 Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
 Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
 Route::get('/orders/{id}', [OrderController::class, 'show'])->name('orders.show');
+Route::post('/orders/{id}/pay', [OrderController::class, 'pay'])->name('orders.pay');
+Route::get('/history', [OrderController::class, 'history'])->name('orders.history');
+
 
 Route::get('/', function () {
     return redirect('/login');
-})->middleware('guest');
+})->middleware('auth');
 
 Route::get('/home', [LaundryController::class, 'index'])->middleware('auth');
 

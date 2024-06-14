@@ -17,6 +17,9 @@ class Order extends Model
         'total_price',
         'pickup_date',
         'pickup_time',
+        'payment_method',
+        'payment_details',
+        'payment_status',
     ];
 
     public function service()

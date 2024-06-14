@@ -47,4 +47,27 @@ class OrderController extends Controller
         $order = Order::with('service')->findOrFail($id);
         return view('show', compact('order'));
     }
+
+    public function pay(Request $request, $id)
+    {
+        $request->validate([
+            'payment_method' => 'required|string',
+            'payment_details' => 'required|string',
+        ]);
+
+        $order = Order::findOrFail($id);
+        $order->update([
+            'payment_method' => $request->payment_method,
+            'payment_details' => $request->payment_details,
+            'payment_status' => 'completed',
+        ]);
+
+        return redirect()->route('orders.history')->with('success', 'Payment successful!');
+    }
+
+    public function history()
+    {
+        $orders = Order::where('payment_status', 'completed')->get();
+        return view('history', compact('orders'));
+    }
 }
