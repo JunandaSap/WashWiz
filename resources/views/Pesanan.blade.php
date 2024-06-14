@@ -24,37 +24,37 @@
         <div class="row">
             <div class="col-md-3 product-card">
                 <div class="card">
-                    <img src="image1.jpg" class="card-img-top" alt="Nike Court Vision">
+                    <img src="image1.jpg" class="card-img-top" alt="Cuci Aja">
                     <div class="card-body">
                         <h5 class="card-title">Cuci Aja</h5>
-                        <a href="#" class="btn btn-primary">Pilih</a>
+                        <a href="{{ url('/orders/create?service_id=1') }}" class="btn btn-primary">Pilih</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 product-card">
                 <div class="card">
-                    <img src="image2.jpg" class="card-img-top" alt="Nike Essential 2">
+                    <img src="image2.jpg" class="card-img-top" alt="Cuci Setrika">
                     <div class="card-body">
                         <h5 class="card-title">Cuci Setrika</h5>
-                        <a href="#" class="btn btn-primary">Pilih</a>
+                        <a href="{{ url('/orders/create?service_id=2') }}" class="btn btn-primary">Pilih</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 product-card">
                 <div class="card">
-                    <img src="image3.jpg" class="card-img-top" alt="Nike Downshifter">
+                    <img src="image3.jpg" class="card-img-top" alt="Dry Cleaning">
                     <div class="card-body">
                         <h5 class="card-title">Dry Cleaning</h5>
-                        <a href="#" class="btn btn-primary">Pilih</a>
+                        <a href="{{ url('/orders/create?service_id=3') }}" class="btn btn-primary">Pilih</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 product-card">
                 <div class="card">
-                    <img src="image4.jpg" class="card-img-top" alt="Nike Air Force 1 '07">
+                    <img src="image4.jpg" class="card-img-top" alt="Karpet">
                     <div class="card-body">
                         <h5 class="card-title">Karpet</h5>
-                        <a href="#" class="btn btn-primary">Pilih</a>
+                        <a href="{{ url('/orders/create?service_id=4') }}" class="btn btn-primary">Pilih</a>
                     </div>
                 </div>
             </div>

@@ -55,7 +55,6 @@
                         <img src="{{ asset($laundry->image) }}" class="card-img-top" alt="{{ $laundry->name }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ $laundry->name }}</h5>
-                            <p class="card-text">Rp. {{ number_format($laundry->price, 0, ',', '.') }}</p>
                             <a href="/pesanan" class="btn btn-primary">Pesan Sekarang</a>
                         </div>
                     </div>
