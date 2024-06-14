@@ -51,41 +51,51 @@
         <div class="row">
             <div class="col-md-3 product-card">
                 <div class="card">
-                    <img src="image1.jpg" class="card-img-top" alt="Nike Court Vision">
+                    <img src="image/laundry1.png" class="card-img-top" alt="Nike Court Vision">
                     <div class="card-body">
                         <h5 class="card-title">Berkah Laundry</h5>
                         <p class="card-text">Rp. 15.000$</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" class="btn btn-primary">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 product-card">
                 <div class="card">
-                    <img src="image2.jpg" class="card-img-top" alt="Nike Essential 2">
+                    <img src="image/laundry1.png" class="card-img-top" alt="Nike Essential 2">
                     <div class="card-body">
                         <h5 class="card-title">Amaman Laundy</h5>
                         <p class="card-text">Rp. 14.500</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" class="btn btn-primary">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 product-card">
                 <div class="card">
-                    <img src="image3.jpg" class="card-img-top" alt="Nike Downshifter">
+                    <img src="image/laundry1.png" class="card-img-top" alt="Nike Downshifter">
                     <div class="card-body">
                         <h5 class="card-title">Bersihkan</h5>
                         <p class="card-text">Rp. 18.000</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" class="btn btn-primary">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 product-card">
                 <div class="card">
-                    <img src="image4.jpg" class="card-img-top" alt="Nike Air Force 1 '07">
+                    <img src="image/laundry1.png" class="card-img-top" alt="Nike Air Force 1 '07">
                     <div class="card-body">
                         <h5 class="card-title">Lamidi Laundry</h5>
                         <p class="card-text">Rp. 14.000</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" class="btn btn-primary">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="image/laundry1.png" class="card-img-top" alt="Nike Air Force 1 '07">
+                    <div class="card-body">
+                        <h5 class="card-title">Lamidi Laundry</h5>
+                        <p class="card-text">Rp. 14.000</p>
+                        <a href="#" class="btn btn-primary">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>
