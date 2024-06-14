@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Laundry;
 
-class homeController extends Controller
+class LaundryController extends Controller
 {
     public function index()
     {

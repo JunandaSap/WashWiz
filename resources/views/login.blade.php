@@ -10,8 +10,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="backlogo"></div>
-    <img src="{{ asset('image/logo.png') }}" class="backlogo">
+<img src="{{ asset('image/logo.png') }}" class="backlogo">
     <div class="center">
         <h1>Login</h1>
         <form method="post" action="{{ route('login') }}">
@@ -35,7 +34,7 @@
                 <span></span>
                 <label>Password</label>
             </div>
-            <div class="pass">Lupa password?</div>
+            <div class="pass"><a href="#">Lupa password?</a></div>
             <input type="submit" value="Masuk">
             <div class="register">
                 Belum punya akun? <a href="/signup">Yuk buat akun!</a>

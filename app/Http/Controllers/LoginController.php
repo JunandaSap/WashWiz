@@ -4,43 +4,33 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use App\Models\User; //
 
 class LoginController extends Controller
 {
+    // Menampilkan halaman login
     public function index()
     {
         return view('login');
     }
 
-    public function login(Request $request)
+    // Menangani proses autentikasi
+    public function authenticate(Request $request)
     {
-        // Validasi input
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
+        $credentials = $request->only('email', 'password');
 
-        // Mencari pengguna berdasarkan email
-        $user = User::where('email', $request->email)->first();
-
-        if ($user && Hash::check($request->password, $user->password)) {
-            // Jika pengguna ditemukan dan password sesuai
-            Auth::login($user);
-            return redirect()->intended('home'); // Mengarahkan ke halaman beranda
+        if (Auth::attempt($credentials)) {
+            // Autentikasi berhasil
+            return redirect()->intended('home');
         }
 
-        // Jika login gagal
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->withInput();
+        // Autentikasi gagal
+        return redirect('login')->withErrors(['login' => 'Login details are not valid']);
     }
 
+    // Menangani logout
     public function logout()
     {
         Auth::logout();
-        return redirect('/login');
+        return redirect('login');
     }
 }
-
