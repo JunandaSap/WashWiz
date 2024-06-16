@@ -20,11 +20,16 @@ class Order extends Model
         'payment_method',
         'payment_details',
         'payment_status',
+        'laundry_id',
     ];
 
     public function service()
     {
         return $this->belongsTo(Service::class);
+    }
+    public function laundry()
+    {
+        return $this->belongsTo(Laundry::class, 'laundry_id');
     }
 }
 

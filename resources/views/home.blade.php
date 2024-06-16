@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>Washwiz</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Washwiz</a>
@@ -22,7 +20,7 @@
                     <a class="nav-link" href="#">Why Washwiz</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="/history">History</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Integrations</a>
@@ -55,7 +53,7 @@
                         <img src="{{ asset($laundry->image) }}" class="card-img-top" alt="{{ $laundry->name }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ $laundry->name }}</h5>
-                            <a href="/pesanan" class="btn btn-primary">Pesan Sekarang</a>
+                            <a href="{{ route('orders.create', ['laundry_id' => $laundry->id]) }}" class="btn btn-primary">Pesan Sekarang</a> <!-- Tambahkan parameter laundry_id -->
                         </div>
                     </div>
                 </div>
@@ -74,5 +72,4 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>

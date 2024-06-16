@@ -3,16 +3,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Service;
+use App\Models\Laundry;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
     public function create(Request $request)
     {
-        $service_id = $request->query('service_id');
-        $selected_service = Service::find($service_id);
+        $laundry_id = $request->query('laundry_id');
+        $selected_laundry = Laundry::find($laundry_id);
         $services = Service::all();
-        return view('orders', compact('services', 'selected_service'));
+        return view('orders', compact('services', 'selected_laundry'));
     }
 
     public function store(Request $request)
@@ -24,6 +25,7 @@ class OrderController extends Controller
             'quantity' => 'required|integer|min:1',
             'pickup_date' => 'required|date',
             'pickup_time' => 'required|date_format:H:i',
+            'laundry_id' => 'required|exists:laundries,id',
         ]);
 
         $service = Service::find($request->service_id);
@@ -37,6 +39,7 @@ class OrderController extends Controller
             'total_price' => $total_price,
             'pickup_date' => $request->pickup_date,
             'pickup_time' => $request->pickup_time,
+            'laundry_id' => $request->laundry_id,
         ]);
 
         return redirect()->route('orders.show', $order->id);
@@ -44,7 +47,7 @@ class OrderController extends Controller
 
     public function show($id)
     {
-        $order = Order::with('service')->findOrFail($id);
+        $order = Order::with('service', 'laundry')->findOrFail($id);
         return view('show', compact('order'));
     }
 
@@ -67,7 +70,7 @@ class OrderController extends Controller
 
     public function history()
     {
-        $orders = Order::where('payment_status', 'completed')->get();
+        $orders = Order::with('laundry')->where('payment_status', 'completed')->get();
         return view('history', compact('orders'));
     }
 }

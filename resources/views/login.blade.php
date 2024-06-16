@@ -10,36 +10,39 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-<img src="{{ asset('image/logo.png') }}" class="backlogo">
-    <div class="center">
-        <h1>Login</h1>
-        <form method="post" action="{{ route('login') }}">
-            @csrf
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-            <div class="txt_field">
-                <input type="email" name="email" value="{{ old('email') }}" required>
-                <span></span>
-                <label>Email</label>
+    <div class="d-flex flex-column justify-content-center align-items-center" style="margin-top:10rem;">
+            <img src="{{ asset('image/logo.png') }}" class="backlogo">
+            <div class="center">
+                <h1>Login</h1>
+                <form method="post" action="{{ route('login') }}">
+                    @csrf
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <div class="txt_field">
+                        <input type="email" name="email" value="{{ old('email') }}" required>
+                        <span></span>
+                        <label>Email</label>
+                    </div>
+                    <div class="txt_field">
+                        <input type="password" name="password" required>
+                        <span></span>
+                        <label>Password</label>
+                    </div>
+                    <div class="pass"><a href="#">Lupa password?</a></div>
+                    <input type="submit" value="Masuk">
+                    <div class="register">
+                        Belum punya akun? <a href="/signup">Yuk buat akun!</a>
+                    </div>
+                </form>
             </div>
-            <div class="txt_field">
-                <input type="password" name="password" required>
-                <span></span>
-                <label>Password</label>
-            </div>
-            <div class="pass"><a href="#">Lupa password?</a></div>
-            <input type="submit" value="Masuk">
-            <div class="register">
-                Belum punya akun? <a href="/signup">Yuk buat akun!</a>
-            </div>
-        </form>
+
     </div>
 </body>
 </html>

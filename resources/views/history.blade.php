@@ -26,10 +26,10 @@
                     <p class="card-text"><strong>Payment Method:</strong> {{ ucfirst($order->payment_method) }}</p>
                     <p class="card-text"><strong>Payment Details:</strong> {{ $order->payment_details }}</p>
                     <p class="card-text"><strong>Payment Status:</strong> {{ ucfirst($order->payment_status) }}</p>
+                    <p class="card-text"><strong>Laundry Name:</strong> {{ $order->laundry->name ?? 'N/A' }}</p>
                 </div>
             </div>
         @endforeach
     </div>
 </body>
 </html>
-                    

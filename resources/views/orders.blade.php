@@ -15,45 +15,45 @@
         @if(session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
-        <form action="{{ route('orders.store') }}" method="POST">
-            @csrf
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" name="address" required>
-            </div>
-            <div class="form-group">
-                <label for="service">Service</label>
-                <select class="form-control" id="service" name="service_id" required>
-                    @foreach($services as $service)
-                        <option value="{{ $service->id }}" data-price="{{ $service->price }}"
-                            {{ $selected_service && $selected_service->id == $service->id ? 'selected' : '' }}>
-                            {{ $service->name }} - Rp {{ number_format($service->price) }}/kg
-                        </option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="quantity">Quantity (kg)</label>
-                <input type="number" class="form-control" id="quantity" name="quantity" min="1" value="1" required>
-            </div>
-            <div class="form-group">
-                <label for="pickup_date">Pickup/Delivery Date</label>
-                <input type="text" class="form-control" id="pickup_date" name="pickup_date" required>
-            </div>
-            <div class="form-group">
-                <label for="pickup_time">Pickup/Delivery Time</label>
-                <input type="text" class="form-control" id="pickup_time" name="pickup_time" required>
-            </div>
-            <div class="form-group">
-                <label for="total_price">Total Price (Rp)</label>
-                <input type="text" class="form-control" id="total_price" readonly>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+    <form action="{{ route('orders.store') }}" method="POST">
+    @csrf
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" name="address" id="address" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="service_id">Service</label>
+            <select name="service_id" id="service_id" class="form-control" required>
+                @foreach($services as $service)
+                    <option value="{{ $service->id }}">{{ $service->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="laundry_name">Laundry</label>
+            <input type="text" name="laundry_name" id="laundry_name" class="form-control" value="{{ $selected_laundry->name }}" readonly>
+            <input type="hidden" name="laundry_id" value="{{ $selected_laundry->id }}"> <!-- Hidden input for laundry_id -->
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity (kg)</label>
+            <input type="number" name="quantity" id="quantity" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="pickup_date">Pickup/Delivery Date</label>
+            <input type="date" name="pickup_date" id="pickup_date" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="pickup_time">Pickup/Delivery Time</label>
+            <input type="time" name="pickup_time" id="pickup_time" class="form-control" required>
+        </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
