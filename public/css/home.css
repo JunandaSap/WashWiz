@@ -34,11 +34,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
-    background-color: #f7f3fc;
+    background-color: #55fffc;
     min-height: 70vh;
     margin-left: 300px;
     margin-right: 300px;
-    margin-bottom: 100px;
+    margin-bottom: 200px;
 }
 
 .hero-text {
@@ -83,7 +83,15 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
-
+#products{
+    justify-content: center;
+    justify-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: aliceblue;
+    width: 60%;
+    margin-bottom: 200px;
+}
 .product-card {
     margin-bottom: 20px;
 }

@@ -45,7 +45,7 @@
     </section>
 
     <div class="container" id="products">
-        <h1 class="my-4">Our Products</h1>
+        <h1 class="my-5">Pilihan Tempat</h1>
         <div class="row">
             @foreach ($laundries as $laundry)
                 <div class="col-md-3 product-card">

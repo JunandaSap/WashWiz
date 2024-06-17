@@ -10,7 +10,7 @@ Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
 Route::get('/orders/{id}', [OrderController::class, 'show'])->name('orders.show');
 Route::post('/orders/{id}/pay', [OrderController::class, 'pay'])->name('orders.pay');
 Route::get('/history', [OrderController::class, 'history'])->name('orders.history');
-
+Route::delete('/orders/{order}/cancel', [OrderController::class, 'cancel'])->name('orders.cancel');
 
 Route::get('/', function () {
     return redirect('/login');

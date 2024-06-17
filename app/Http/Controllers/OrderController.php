@@ -70,7 +70,20 @@ class OrderController extends Controller
 
     public function history()
     {
-        $orders = Order::with('laundry')->where('payment_status', 'completed')->get();
+        $orders = Order::with('laundry', 'service') // Pastikan memuat relasi laundry dan service
+                    ->whereIn('payment_status', ['completed', 'pending'])
+                    ->get();
         return view('history', compact('orders'));
     }
+
+    public function cancel($id)
+{
+    $order = Order::find($id);
+    if ($order->payment_status == 'pending') {
+        $order->delete();
+        return redirect()->route('orders.history')->with('success', 'Order has been canceled.');
+    }
+    return redirect()->route('orders.history')->with('error', 'Unable to cancel order.');
+}
+
 }
